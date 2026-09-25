@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Medicações para Pets</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/patas_preto.png" type="image/png">    
+</head>
+
+<body>
+    
+    <!-- LOGO E MENU SUPERIOR -->    
+    
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo" onclick="switchPage('home')">
+                <img src="img/patas_branco.png" alt="Logo" class="logo-icon">
+                Controle de Medicações para Pets
+            </div>
+            <ul class="nav-menu">
+                <li><button onclick="switchPage('home')" class="btn-nav btn-nav" id="link-home">Início</button></li>
+                <li><button onclick="switchPage('page-quem-somos')" class="btn-nav" id="link-quem-somos">Quem Somos</button></li>
+                <li><button onclick="switchPage('page-produtos-servicos')" class="btn-nav" id="link-produtos-servicos">Produtos / Serviços</button></li>
+                <li><button onclick="switchPage('page-contato')" class="btn-nav" id="link-contato">Contato</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo-principal">
+
+        <!-- CARD "Quem Somos" -->
+        <section id="page-quem-somos" class="page">
+            <div class="card-formulario">
+                <button onclick="fecharPagina('page-quem-somos')" class="modal-btn-fechar">🗙</button>
+                <h2 class="titulo-formulario text-azul">Quem Somos</h2>
+                
+                <div class="grupo-campos texto-menu-suspenso">
+                    <p>Olá, me chamo <strong>Emmanuel!</strong></p>  
+                    <p>O presente projeto visa atender os requisitos do MVP de Desenvolvimento Full Stack Básico:</p>          
+                    <p><strong>"Desenvolvimento de uma SPA (Single Page Application) utilizando HTML, CSS e JavaScript".</strong></p>
+                    <p>Espero que esteja tudo certo! Até mais!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARD "Produtos e Serviços" -->
+        <section id="page-produtos-servicos" class="page">
+            <div class="card-formulario">
+                <button onclick="fecharPagina('page-produtos-servicos')" class="modal-btn-fechar">🗙</button>
+                <h2 class="titulo-formulario text-azul">Produtos e Serviços</h2>
+                <div class="grupo-campos texto-menu-suspenso">
+                    <p>Conheçam nossos Produtos e Serviços!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARD "Contato" -->
+        <section id="page-contato" class="page">
+            <div class="card-formulario">
+                <button onclick="fecharPagina('page-contato')" class="modal-btn-fechar">🗙</button>
+                <h2 class="titulo-formulario text-azul">Contato</h2>
+                <div class="grupo-campos texto-menu-suspenso">
+                    <p>Entre em contato conosco ou nos acompanhe através das nossas redes sociais:</p>
+                    
+                    <!-- Links das Redes Sociais -->
+                    <div class="social-links" style="justify-content: center; margin-top: 15px;">
+                        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="social-icon">
+                            <img src="img/whatsapp.svg" alt="WhatsApp">
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon">
+                            <img src="img/instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter / X" class="social-icon">
+                            <img src="img/twitter.svg" alt="Twitter">
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon">
+                            <img src="img/facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" title="TikTok" class="social-icon">
+                            <img src="img/tiktok.svg" alt="TikTok">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>        
+
+        <!-- TELA INICIAL -->
+        
+        <section id="home" class="page active painel-home">
+            <div class="card-boas-vindas">
+                <h1 class="titulo-painel">Controle de Medicações para Pets</h1>
+                <p class="subtitulo-painel">Escolha uma das opções abaixo para iniciar</p>
+                
+                <div class="acoes-rapidas">
+                                    
+                    <!-- Opções Tutor -->
+                    <div class="dropdown-home">
+                        <button class="btn-nav btn-bg-azul">
+                              Opções Tutor(a) ▾
+                        </button>    
+                        <div class="dropdown-home-content">
+                            <button onclick="switchPage('cad-tutor')"> ● Cadastrar Tutor(a)</button>
+                            <button onclick="switchPage('edit-tutor')">  ● Consultar/Editar Tutor(a)</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Opções Pet -->
+                    <div class="dropdown-home">
+                        <button class="btn-nav btn-bg-verde">
+                              Opções Pet ▾
+                        </button>
+                        <div class="dropdown-home-content">
+                            <button onclick="switchPage('cad-pet')"> ● Cadastrar Pet</button>
+                            <button onclick="switchPage('edit-pet')"> ● Consultar/Editar Pet</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Opções Medicamentos -->
+                    <div class="dropdown-home">
+                        <button class="btn-nav btn-bg-roxo">
+                              Opções Medicamentos ▾
+                        </button>
+                        <div class="dropdown-home-content">
+                            <button onclick="switchPage('cad-medicamento')"> ● Cadastrar Medicamento</button>
+                            <button onclick="switchPage('edit-medicamento')"> ● Consultar/Editar Medicamento</button>
+                        </div>
+                    </div>
+
+                    <!-- Opções 'Gerar Prontuário Completo' -->
+                    <!--
+                    <button onclick="abrirSeletorProntuario()" class="btn-nav btn-bg-laranja">
+                        📄 Gerar Prontuário Completo
+                    </button>
+                    -->
+                    <!-- Opções 'Gerar Prontuário Completo' -->
+                    <button onclick="switchPage('modal-prontuario')" class="btn-nav btn-bg-laranja">
+                        📄 Gerar Prontuário Completo
+                    </button>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- CARD 'CADASTRAR TUTOR' -->    
+        
+        <section id="cad-tutor" class="page">
+            <div class="card-formulario">
+                <button type="button" onclick="fecharPagina('cad-tutor')" class="modal-btn-fechar">🗙</button>
+                <h2 class="titulo-formulario text-azul">＋ Novo(a) Tutor(a)</h2>
+                <form onsubmit="CadastrarTutor(event)" class="grupo-campos">
+                    <div class="campo">
+                        <label class="rotulo-campo">Nome do Tutor *</label>
+                        <input type="text" id="tutorNome" required placeholder="Ex: Carlos Silva" class="input-texto focus-azul">
+                    </div>
+                    
+                    <!-- Campo de CPF Ajustado -->
+                    <div class="campo">
+                        <label class="rotulo-campo">CPF *</label>
+                        <input type="text" id="tutorCpf" required placeholder="000.000.000-00" maxlength="14" oninput="mascaraCPF(this)" class="input-texto focus-azul">
+                    </div>
+
+                    <!-- Campo de Telefone Ajustado -->
+                    <div class="campo">
+                        <label class="rotulo-campo">Telefone *</label>
+                        <input type="text" id="tutorTelefone" required placeholder="Ex: (11) 99999-9999" maxlength="15" oninput="mascaraTelefone(this)" class="input-texto focus-azul">
+                    </div>
+                    
+                    <div class="campo">
+                        <label class="rotulo-campo">E-mail</label>
+                        <input type="email" id="tutorEmail" placeholder="Ex: carlos@email.com" class="input-texto focus-azul">
+                    </div>
+                    <div class="campo">
+                        <label class="rotulo-campo">Endereço</label>
+                        <input type="text" id="tutorEndereco" placeholder="Ex: Rua das Flores, 123" class="input-texto focus-azul">
+                    </div>
+                    <button type="submit" class="btn-enviar btn-bg-azul">Salvar Tutor</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- CARD 'CADASTRAR ANIMAL' -->       
+        
+        <section id="cad-pet" class="page">
+                <div class="card-formulario">
+                <button type="button" onclick="fecharPagina('cad-pet')" class="modal-btn-fechar">🗙</button>
+                <h2 class="titulo-formulario text-verde">＋ Novo Pet</h2>
+                <form onsubmit="CadastrarPet(event)" class="grupo-campos">
+                    <div class="campo">
+                        <label class="rotulo-campo">Vincular ao Tutor(a) *</label>
+                        <select id="selectTutor" required class="input-texto focus-verde select-tutor">
+                            <option value="">Carregando tutores...</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label class="rotulo-campo">Nome do Pet *</label>
+                        <input type="text" id="petNome" required placeholder="Ex: Rex" class="input-texto focus-verde">
+                    </div>
+                    <div class="duas-colunas">
+                        <div class="campo">
+                            <label class="rotulo-campo">Espécie *</label>
+                            <input type="text" id="petEspecie" required placeholder="Ex: Cachorro" class="input-texto focus-verde">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Raça</label>
+                            <input type="text" id="petRaca" placeholder="Ex: Labrador" class="input-texto focus-verde">
+                        </div>
+                    </div>
+                    <div class="duas-colunas">
+                        <div class="campo">
+                            <label class="rotulo-campo">Idade (Anos)</label>
+                            <input type="number" id="petIdade" placeholder="Ex: 3" class="input-texto focus-verde">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Peso (Kg)</label>
+                            <input type="number" step="0.1" id="petPeso" placeholder="Ex: 15.4" class="input-texto focus-verde">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar btn-bg-verde">Salvar Pet</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- CARD 'CADASTRAR MEDICAMENTO' -->
+        
+        <section id="cad-medicamento" class="page">
+            <div class="card-formulario">
+            <button type="button" onclick="fecharPagina('cad-medicamento')" class="modal-btn-fechar">🗙</button>
+                <h2 class="titulo-formulario text-roxo">＋ Cadastrar Medicamento</h2>
+                <form onsubmit="CadastrarMedicamento(event)" class="grupo-campos">
+                    <div class="campo">
+                        <label class="rotulo-campo">Selecione o Pet (Paciente) *</label>
+                        <select id="selectPet" required class="input-texto focus-roxo select-medicamento">
+                            <option value="">Carregando pets...</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label class="rotulo-campo">Nome do Medicamento *</label>
+                        <input type="text" id="medNome" required placeholder="Ex: Amoxicilina 250mg" class="input-texto focus-roxo">
+                    </div>
+                    <div class="duas-colunas">
+                        <div class="campo">
+                            <label class="rotulo-campo">Dosagem *</label>
+                            <input type="text" id="medDosagem" required placeholder="Ex: 1 comprimido, 5ml" class="input-texto focus-roxo">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Frequência *</label>
+                            <input type="text" id="medFrequencia" required placeholder="Ex: 12h em 12h, Única" class="input-texto focus-roxo">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Data de Início *</label>
+                            <input type="date" id="medDataInicio" class="input-texto focus-roxo">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Data de Término</label>
+                            <input type="date" id="medDataFim" class="input-texto focus-roxo">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-enviar btn-bg-roxo">Registrar Medicamento</button>
+                </form>
+            </div>
+        </section>
+
+
+        <!-- INÍCIO DA SEÇAO DE CONSULTA/EDICAO/DELEÇÃO -->
+        
+        <!-- TUTOR: CARD DE CONSULTA -->
+        
+        <section id="edit-tutor" class="page"> 
+            <div class="card-formulario">
+            <button type="button" onclick="fecharPagina('edit-tutor')" class="modal-btn-fechar">🗙</button>
+                <h2 class="titulo-formulario text-azul">🔍 Consultar / Editar Dados Tutor(a)</h2>
+                <form onsubmit="consultarTutorFormulario(event)" class="grupo-campos">
+                    <div class="campo">
+                        <label for="consultaTutorId" class="rotulo-campo">ID do Tutor *</label>
+                        <select id="consultaTutorId" class="input-texto focus-azul" style="background-color: #ffffff;" required>
+                            <option value="">Selecione um tutor...</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-enviar btn-bg-azul">Buscar Informações</button>
+                </form>
+            </div>
+
+            <!-- TUTOR: CARD DE RESULTADO -->
+            
+            <div id="resultadoConsultaTutor" class="card-formulario" style="display: none; margin-top: 1.5rem;">
+                <div id="blocoVisualizacaoTutor">
+                    <p class="titulo-formulario text-azul">👤 Tutor(a) Encontrado(a)!</p>
+                    <p><strong>Nome:</strong> <span id="resTutorNome">-</span></p>
+                    <p><strong>CPF:</strong> <span id="resTutorCpf">-</span></p>
+                    <p><strong>E-mail:</strong> <span id="resTutorEmail">-</span></p>
+                    <p><strong>Telefone:</strong> <span id="resTutorTelefone">-</span></p>
+                    <p><strong>Endereço:</strong> <span id="resTutorEndereco">-</span></p>
+                    
+                    <div class="container-botoes-card">
+                        <button type="button" onclick="abrirModoEdicaoCard()" class="btn-enviar btn-bg-azul btn-largura-media"> Editar Dados </button>
+                        <button type="button" onclick="dispararDeletarCard()" class="btn-enviar btn-bg-vermelho btn-largura-media"> Deletar Tutor </button>
+                        <button type="button" onclick="voltarParaHomeCard()" class="btn-enviar btn-bg-cinza btn-largura-curta"> Voltar </button>
+                    </div>
+                </div>
+
+                <div id="blocoEdicaoTutor" style="display: none;">
+                    <p class="titulo-formulario text-azul">✏️ Editando Tutor</p>
+                    <div class="grupo-campos" style="display: flex; flex-direction: column; gap: 12px;">
+                        <div class="campo">
+                            <label class="rotulo-campo">Nome:</label>
+                            <input type="text" id="edit-t-nome" class="input-texto focus-azul">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">E-mail:</label>
+                            <input type="text" id="edit-t-email" placeholder="E-mail" class="input-texto focus-azul">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Telefone:</label>
+                            <input type="text" id="edit-t-tel" oninput="mascaraTelefone(this)" class="input-texto focus-azul">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Endereço:</label>
+                            <input type="text" id="edit-t-end" placeholder="Endereço" class="input-texto focus-azul">
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px; display: flex; gap: 10px;">
+                        <button type="button" onclick="dispararSalvarCard()" class="btn-enviar btn-bg-azul" style="max-width: 150px;">Salvar</button>
+                        <button type="button" onclick="fecharModoEdicaoCard()" class="btn-enviar btn-bg-cinza" style="max-width: 150px;">Cancelar (X)</button>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        
+        <!-- PET - CARD DE CONSULTA -->
+        
+        <section id="edit-pet" class="page"> 
+            <div class="card-formulario">
+            <button type="button" onclick="fecharPagina('edit-pet')" class="modal-btn-fechar">🗙</button>
+                <h2 class="titulo-formulario text-verde">🔍 Consultar / Editar Pet</h2>
+                <form onsubmit="consultarPetFormulario(event)" class="grupo-campos">
+                    <div class="campo">
+                        <!-- <label for="consultaPetId" class="rotulo-campo">ID do Pet *</label>
+                        <input type="number" id="consultaPetId" class="input-texto focus-verde" placeholder="Ex: 2" required> -->
+                        <label for="consultaPetId" class="rotulo-campo">Selecionar Pet *</label>
+                        <!-- ALTERADO: Substituído o input por select, mantendo as classes e o ID original -->
+                        <select id="consultaPetId" class="input-texto focus-verde" style="background-color: #ffffff;" required>
+                            <option value="">Selecione um pet...</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-enviar btn-bg-verde">Buscar Informações</button>
+                </form>
+            </div>
+
+            <!-- PET- CARD DE RESULTADO -->
+            
+            <div id="resultadoConsultaPet" class="card-formulario" style="display: none; margin-top: 1.5rem;">
+                <div id="blocoVisualizacaoPet">
+                    <p class="titulo-formulario text-verde">🐾 Pet Encontrado!</p>
+                    <p><strong>Nome:</strong> <span id="resPetNome">-</span></p>
+                    <p><strong>Tutor(a) Responsável:</strong> <span id="resPetTutor">-</span></p>
+                    <p><strong>Espécie:</strong> <span id="resPetEspecie">-</span></p>
+                    <p><strong>Raça:</strong> <span id="resPetRaca">-</span></p>
+                    <p><strong>Idade:</strong> <span id="resPetIdade">-</span></p>
+                    <p><strong>Peso:</strong> <span id="resPetPeso">-</span></p>
+                    
+                    <div class="container-botoes-card">
+                        <button type="button" onclick="abrirModoEdicaoPetCard()" class="btn-enviar btn-bg-verde btn-largura-media"> Editar Dados </button>
+                        <button type="button" onclick="dispararDeletarPetCard()" class="btn-enviar btn-bg-vermelho btn-largura-media"> Deletar Pet </button>
+                        <button type="button" onclick="voltarParaHomePetCard()" class="btn-enviar btn-bg-cinza btn-largura-curta"> Voltar </button>
+                    </div>
+                </div>
+
+                <div id="blocoEdicaoPet" style="display: none;">
+                    <p class="titulo-formulario text-verde">✏️ Editando Pet</p>
+                    <div class="grupo-campos" style="display: flex; flex-direction: column; gap: 12px;">
+                        <div class="campo">
+                            <label class="rotulo-campo">Nome do Pet:</label>
+                            <input type="text" id="edit-p-nome" class="input-texto focus-verde">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Espécie:</label>
+                            <input type="text" id="edit-p-especie" class="input-texto focus-verde">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Raça:</label>
+                            <input type="text" id="edit-p-raca" placeholder="Ex: Poodle" class="input-texto focus-verde">
+                        </div>
+                        <div class="duas-colunas" style="display: flex; gap: 10px;">
+                            <div class="campo" style="flex: 1;">
+                                <label class="rotulo-campo">Idade (Anos):</label>
+                                <input type="number" id="edit-p-idade" class="input-texto focus-verde">
+                            </div>
+                            <div class="campo" style="flex: 1;">
+                                <label class="rotulo-campo">Peso (Kg):</label>
+                                <input type="number" step="0.1" id="edit-p-peso" class="input-texto focus-verde">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px; display: flex; gap: 10px;">
+                        <button type="button" onclick="dispararSalvarPetCard()" class="btn-enviar btn-bg-verde" style="max-width: 150px;">Salvar</button>
+                        <button type="button" onclick="fecharModoEdicaoPetCard()" class="btn-enviar btn-bg-cinza" style="max-width: 150px;">Cancelar (X)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- MEDICAMENTOS - CARD DE CONSULTA -->
+        
+        <section id="edit-medicamento" class="page"> 
+            <div class="card-formulario">
+            <button type="button" onclick="fecharPagina('edit-medicamento')" class="modal-btn-fechar">🗙</button>
+                <h2 class="titulo-formulario text-roxo">🔍 Consultar / Editar Medicamento</h2>
+                <form onsubmit="consultarMedicamentoFormulario(event)" class="grupo-campos">
+                    <div class="campo">
+                        <label for="consultaMedicamentoId" class="rotulo-campo">Selecionar Receita/Medicamento *</label>
+                        <select id="consultaMedicamentoId" class="input-texto focus-roxo" required>
+                            <option value="">Selecione um medicamento...</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-enviar btn-bg-roxo">Buscar Informações</button>
+                </form>
+            </div>
+
+            <!-- MEDICAMENTOS - CARD DE RESULTADO -->
+            
+            <div id="resultadoConsultaMedicamento" class="card-formulario" style="display: none; margin-top: 1.5rem;">
+                <div id="blocoVisualizacaoMedicamento">
+                    <p class="titulo-formulario text-roxo">💊 Registro Encontrado!</p>
+                    <p><strong>Pet (Paciente):</strong> <span id="resMedNomePet">-</span></p>
+                    <p><strong>Medicamento:</strong> <span id="resMedNome">-</span></p>
+                    <p><strong>Dosagem:</strong> <span id="resMedDosagem">-</span></p>
+                    <p><strong>Frequência:</strong> <span id="resMedFrequencia">-</span></p>
+                    <p><strong>Data de Início:</strong> <span id="resMedDataInicio">-</span></p>
+                    <p><strong>Data de Término:</strong> <span id="resMedDataFim">-</span></p>
+                    
+                    <div class="container-botoes-card">
+                        <button type="button" onclick="abrirModoEdicaoMedicamentoCard()" class="btn-enviar btn-bg-roxo btn-largura-media"> Editar Dados </button>
+                        <button type="button" onclick="dispararDeletarMedicamentoCard()" class="btn-enviar btn-bg-vermelho btn-largura-media"> Deletar Medicamento </button>
+                        <button type="button" onclick="voltarParaHomeMedicamentoCard()" class="btn-enviar btn-bg-cinza btn-largura-curta"> Voltar </button>
+                    </div>
+                </div>
+
+                <div id="blocoEdicaoMedicamento" style="display: none;">
+                    <p style="font-weight: 700; margin-bottom: 15px; color: #8e44ad;">✏️ Editando Receita</p>
+                    <div class="grupo-campos" style="display: flex; flex-direction: column; gap: 12px;">
+                        <div class="campo">
+                            <label class="rotulo-campo">Nome do Medicamento:</label>
+                            <input type="text" id="edit-med-nome" class="input-texto focus-roxo">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Dosagem:</label>
+                            <input type="text" id="edit-med-dose" class="input-texto focus-roxo">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Frequência:</label>
+                            <input type="text" id="edit-med-freq" class="input-texto focus-roxo">
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Data de Início:</label>
+                             <input type="date" id="edit-med-data-inicio" class="input-texto focus-roxo"> 
+                        </div>
+                        <div class="campo">
+                            <label class="rotulo-campo">Data de Término:</label>
+                            <input type="date" id="edit-med-data-fim" class="input-texto focus-roxo"> 
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px; display: flex; gap: 10px;">
+                        <button type="button" onclick="dispararSalvarMedicamentoCard()" class="btn-enviar btn-bg-roxo" style="max-width: 150px;">Salvar</button>
+                        <button type="button" onclick="fecharModoEdicaoMedicamentoCard()" class="btn-enviar btn-bg-cinza" style="max-width: 150px;">Cancelar (X)</button>
+                    </div>
+                </div>
+            </div>
+        </section>     
+    </main>
+ 
+    <!-- GERAÇÃO DO PRONTUÁRIO -->
+    <section id="modal-prontuario" class="page">
+      <!-- Troca de .modal-prontuario-card para .card-boas-vindas -->
+      <div class="card-boas-vindas text-left" style="position: relative; max-width: 72rem; margin: 0 auto;">
+      <!-- Botão Fechar (Mantém absoluto relativo ao card) -->
+          <button type="button" onclick="switchPage('home')" class="modal-btn-fechar">🗙</button>
+          
+          <!-- SELEÇÃO PET -->          
+          <div id="selecao-pet-prontuario">
+              <h2 class="titulo-formulario" style="margin-bottom: 15px;">Gerar Prontuário do Pet</h2>
+              <p class="rotulo-campo">Selecione um Pet cadastrado:</p>
+              <select id="select-pet-prontuario" class="input-texto focus-roxo"></select>
+              <button onclick="gerarDadosProntuario()" type="button" class="btn-enviar btn-bg-laranja" style="margin-top: 15px;">Visualizar Prontuário</button>
+          </div>
+
+          <!-- RELATÓRIO -->
+          <div id="conteudo-relatorio-prontuario" style="display: none;">
+              <div id="area-impressao">
+                  <h1 style="text-align: center; margin-bottom: 25px; color: #2c3e50; font-size: 1.8rem;">🐾 Prontuário Médico Pet</h1>
+                  
+                  <div class="prontuario-container">
+                      <div class="card-prontuario card-prontuario-pet">
+                          <h3>🐈‍⬛ Dados do Pet</h3>
+                          <div id="dados-pet-prontuario" style="line-height: 1.6;"></div>
+                      </div>
+                      <div class="card-prontuario card-prontuario-tutor">
+                          <h3>👤 Tutor(a)</h3>
+                          <div id="dados-tutor-prontuario" style="line-height: 1.6;"></div>
+                      </div>
+                  </div>
+                  
+                  <div class="card-prontuario-medicacoes">
+                      <h3>💊 Tratamentos e Medicações Ativas</h3>
+                      <ul id="dados-medicamentos-prontuario" class="lista-medicacoes-prontuario"></ul>
+                  </div>
+              </div>
+              
+              <!-- RELATÓRIO - BOTÕES -->
+              <div class="acoes-impressao container-botoes-card" style="margin-top: 30px;">
+                  <button onclick="window.print()" class="btn-enviar btn-bg-cinza">Imprimir / PDF</button>
+                  <button onclick="voltarParaSelecao()" class="btn-enviar btn-bg-verde">Buscar Outro Pet</button>
+              </div>
+          </div>
+      </div>
+    </section>
+
+
+    <!-- RODAPÉ -->
+    
+    <footer>
+        <p>&copy; 2026 &copy; MVP - Full Stack Básico - Emmanuel Soares Santos.</p>
+    </footer>
+ 
+    <!-- Link para o arquivo JavaScript (/js/app.js.)-->
+    
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,567 @@
+/*//////////////////////////////////////////////////////////////////////
+// CONTROLE DE MEDICAÇÕES PARA PETS
+//////////////////////////////////////////////////////////////////////*/
+
+/* CONFIGURAÇÕES GERAIS, BODY E CABEÇALHO */
+   
+body {
+    margin: 0;
+    color: #1f2937;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-image: url('../img/fundo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1a1a1a; 
+}
+
+.main-header {
+    background-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.nav-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+    gap: 2rem;
+    width: 100% !important;
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.logo { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo-icon {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+}
+
+/* MENUS, NAVEGAÇÃO E REDES SOCIAIS */
+
+.nav-menu {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.btn-nav {
+    border: none;
+    background: transparent;
+    color: inherit;
+    /* padding: 0.5rem 1rem; */
+    padding: 8px 16px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-nav:hover {
+    background-color: #3b82f6; 
+}
+
+.social-links {
+    display: flex !important;
+    gap: 15px !important;
+    align-items: center !important;
+}
+
+.social-icon {
+    display: inline-block;
+    transition: transform 0.2s, opacity 0.2s;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.social-icon img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    object-fit: contain;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.dropdown-home {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-home-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(245, 245, 247, 0.85); 
+    backdrop-filter: blur(8px);  
+    min-width: 220px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    z-index: 10;
+    border-radius: 4px;
+    padding: 5px 0;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+}
+
+.dropdown-home-content button {
+    color: #333333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown-home-content button:hover {
+    background-color: #f5f6fa; 
+    color: #2c3e50;
+}
+
+.dropdown-home:hover .dropdown-home-content {
+    display: block;
+}
+
+.dropdown-home:hover .btn-bg-azul {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+.dropdown-home:hover .btn-bg-verde {
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+}
+
+.dropdown-home:hover .btn-bg-roxo {
+    background-color: #7c3aed !important;
+    color: #ffffff !important;
+}
+
+
+/* PAINEL HOME, GRADES E TABELAS DE DADOS  */
+
+.conteudo-principal {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.painel-home {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card-boas-vindas {
+    background-color: rgba(245, 245, 247, 0.85); 
+    padding: 40px 20px; 
+    text-align: center;  
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Para usar a mesma formatação no Prontuário */
+.card-boas-vindas.text-left {
+    text-align: left !important;
+}
+
+.acoes-rapidas {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.titulo-painel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.subtitulo-painel { 
+    color: #1f2937; 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    margin: 0 0 30px 0; 
+}
+
+/* FORMULÁRIOS, BOTÕES E CLASSES DE CORES */
+
+.card-formulario {
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(245, 245, 247, 0.85); 
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: relative; 
+}
+
+.titulo-formulario { font-size: 1.25rem; font-weight: 700; margin-top: 0; margin-bottom: 1rem; }
+.grupo-campos { display: flex; flex-direction: column; gap: 1rem; }
+.rotulo-campo { display: block; font-size: 0.875rem; font-weight: 500; color: #374151; margin-bottom: 0.25rem; }
+
+.input-texto {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+}
+
+.select-tutor, .select-medicamento { background-color: #ffffff; }
+.duas-colunas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+
+/* Efeitos de Foco nos Inputs */
+.input-texto.focus-azul:focus { outline: 2px solid #3b82f6; outline-offset: 1px; }
+.input-texto.focus-verde:focus, .select-tutor:focus { outline: 2px solid #22c55e; outline-offset: 1px; }
+.input-texto.focus-roxo:focus, .select-medicamento:focus { outline: 2px solid #a855f7; outline-offset: 1px; }
+
+/* Botões de Envio e Comportamento Geral */
+.btn-enviar {
+    width: 100%; color: #ffffff; padding-top: 0.5rem; padding-bottom: 0.5rem;
+    border-radius: 0.375rem; font-weight: 500; border: none; cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.container-botoes-card { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.container-botoes-card .btn-enviar { flex: 1; margin: 0; }
+.btn-largura-media { min-width: 120px; max-width: 180px; }
+.btn-largura-curta { min-width: 90px; max-width: 120px; }
+
+/* Classes de Cores Simples para Textos */
+.text-azul { color: #2563eb; }
+.text-verde { color: #16a34a; }
+.text-roxo { color: #9333ea; }
+
+/* Cores de Fundo Estáticas (Para botões internos de formulários como Editar, Deletar, Cancelar) */
+.btn-bg-cinza { background-color: #9ca3af; color: #000000; } 
+.btn-bg-cinza:hover { background-color: #868e96; color: #000000; }
+
+.btn-bg-vermelho { background-color: #c0392b; color: #ffffff; } 
+.btn-bg-vermelho:hover { background-color: #a82c1e; }
+
+.card-formulario .btn-bg-azul,
+.container-botoes-card .btn-bg-azul {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+.card-formulario .btn-bg-azul:hover,
+.container-botoes-card .btn-bg-azul:hover,
+.btn-bg-azul:hover { 
+    background-color: #1d4ed8 !important; 
+    color: #ffffff !important;
+}
+
+.card-formulario .btn-bg-verde, /* Corrige erro botao verde */
+.container-botoes-card .btn-bg-verde {
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.card-formulario .btn-bg-verde:hover,
+.container-botoes-card .btn-bg-verde:hover,
+.btn-bg-verde:hover {
+    background-color: #15803d !important; 
+    color: #ffffff !important;
+}
+
+.card-formulario .btn-bg-roxo,
+.container-botoes-card .btn-bg-roxo {
+    background-color: #7c3aed !important;
+    color: #ffffff !important;
+    border: none;
+}
+.card-formulario .btn-bg-roxo:hover,
+.container-botoes-card .btn-bg-roxo:hover {
+    background-color: #6d28d9 !important; 
+}
+
+/* OPÇÕES TUTOR (AZUL) */
+.btn-bg-azul {
+    color: #2563eb;
+}
+.btn-bg-azul:hover, .dropdown-home:hover .btn-bg-azul {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+/* OPÇÕES PET (VERDE) */
+.btn-bg-verde {
+    color: #16a34a;
+}
+.btn-bg-verde:hover, .dropdown-home:hover .btn-bg-verde {
+    background-color: #16a34a !important;
+    border-color: #16a34a !important;
+    color: #ffffff !important;
+}
+
+/* OPÇÕES MEDICAMENTOS (ROXO) */
+.btn-bg-roxo {
+    color: #7c3aed;
+}
+.btn-bg-roxo:hover, .dropdown-home:hover .btn-bg-roxo {
+    background-color: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+}
+
+/* GERAR PRONTUÁRIO (LARANJA) */
+
+.card-formulario .btn-bg-laranja,
+.container-botoes-card .btn-bg-laranja,
+.btn-enviar.btn-bg-laranja { 
+    background-color: #ff9f43 !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.card-formulario .btn-bg-laranja:hover,
+.container-botoes-card .btn-bg-laranja:hover,
+.btn-enviar.btn-bg-laranja:hover { 
+    background-color: #ee831b !important;
+    color: #ffffff !important;
+}
+
+.btn-nav.btn-bg-laranja {
+    background-color: transparent !important;
+    color: #ff9f43 !important;
+    border: none;
+}
+.btn-nav.btn-bg-laranja:hover {
+    background-color: #ff9f43 !important;
+    color: #ffffff !important;
+}
+
+/* PRONTUÁRIO, IMPRESSÃO E RODAPÉ */
+
+#modal-prontuario.page.active {
+    display: flex;             
+    justify-content: center;
+    align-items: flex-start;   
+    padding: 40px 20px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 40px); 
+    padding-bottom: 80px;      
+}
+
+.modal-btn-fechar {
+    position: absolute; 
+    top: 15px; 
+    right: 15px; 
+    background: none; 
+    border: none; 
+    font-size: 1.5rem; 
+    cursor: pointer;
+}
+  
+.texto-menu-suspenso { color: #374151; line-height: 1.3; }
+.texto-menu-suspenso p { margin-top: 0; margin-bottom: 6px; }
+.texto-menu-suspenso p:last-child { margin-bottom: 0; }
+.texto-menu-suspenso p.btn-verde { font-weight: 700; margin-bottom: 10px; }
+#resultadoConsultaTutor { margin-top: 1.5rem; border-top: 1px solid #e5e7eb; padding-top: 1rem; }
+
+.page { display: none; }
+.page.active { display: block; }
+#modal-prontuario #area-impressao {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+#modal-prontuario .prontuario-container { 
+    display: grid !important; 
+    grid-template-columns: 1fr 1fr !important; 
+    width: 100% !important;
+    gap: 20px; 
+    margin-bottom: 25px; 
+    box-sizing: border-box;
+}
+
+#selecao-pet-prontuario {
+    max-width: 85rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.card-prontuario { background: #f8f9fa; padding: 20px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
+.card-prontuario-pet { border-left: 5px solid #2ecc71; }
+.card-prontuario-pet h3 { color: #27ae60; margin-top: 0; margin-bottom: 12px; }
+.card-prontuario-tutor { border-left: 5px solid #3498db; }
+.card-prontuario-tutor h3 { color: #2980b9; margin-top: 0; margin-bottom: 12px; }
+.card-prontuario-medicacoes { background: #f8f9fa; border-left: 5px solid #9b59b6; padding: 20px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
+.card-prontuario-medicacoes h3 { color: #8e44ad; margin-top: 0; margin-bottom: 15px; }
+.lista-medicacoes-prontuario { list-style: none; padding: 0; margin: 0; }
+.item-medicacao-prontuario { background: white; margin-bottom: 10px; padding: 12px; border-radius: 4px; border: 1px solid #e0e0e0; display: flex; flex-direction: column; gap: 4px; }
+.item-medicacao-prontuario .medicacao-nome { color: #2c3e50; font-weight: bold; font-size: 1.05rem; }
+.item-medicacao-prontuario .medicacao-detalhe { color: #555; font-size: 0.95rem; margin-left: 20px; }
+
+/* Rodapé (Footer) */
+footer {
+    background-color: #2563eb; color: #ffffff; text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: fixed; bottom: 0; left: 0; padding: 2px 0; width: 100%;
+}
+
+/* Configuração de Impressão */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 15mm; 
+    }
+
+    /* Oculta as ferramentas web */
+    .main-header, .btn-atualizar, .btn-nav, #modal-prontuario button, .acoes-impressao, footer { 
+        display: none !important; 
+    }
+    
+    #modal-prontuario { 
+        position: absolute !important; 
+        left: 0 !important; 
+        top: 0 !important; 
+        background: white !important; 
+        padding: 0 !important; 
+        width: 100% !important;
+    }
+    
+    /* Zera os 1100px na hora da impressão para a folha assumir 100% da área útil */
+    #modal-prontuario > div { 
+        background: white !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: none !important; 
+        border: none !important;
+        padding: 0 !important; 
+        max-height: none !important; 
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #modal-prontuario #area-impressao {
+        width: 100% !important;
+    }
+
+    #modal-prontuario .prontuario-container { 
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        width: 100% !important;
+        gap: 20px !important;
+    }
+
+    .card-prontuario, .card-prontuario-medicacoes {
+        background: #ffffff !important;
+        border: 1px solid #d1d5db !important;
+    }
+}
+
+#dados-pet-prontuario span, 
+#dados-tutor-prontuario span {
+    font-style: italic;
+    color: #9ca3af; 
+}
+
+#dados-medicamentos-prontuario .sem-tratamento {
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 15px;
+    text-align: center;
+    list-style-type: none;
+}
+
+#dados-medicamentos-prontuario .item-medicacao-prontuario {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+    list-style-type: none;
+}
+
+#dados-medicamentos-prontuario .medicacao-nome {
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #9b59b6;
+    display: block;
+    margin-bottom: 4px;
+}
+
+#dados-medicamentos-prontuario .medicacao-detalhe {
+    display: block;          
+    font-size: 0.9rem;
+    padding-left: 15px;      
+    margin-top: 2px;
+    color: #374151;          
+}
+
+/* ULTIMOS AJUSTES */
+
+#edit-pet.page.active {
+    min-height: 100vh;
+    padding-bottom: 100px; 
+    box-sizing: border-box;
+}
+
+#edit-tutor.page.active {
+    min-height: 100vh;
+    padding-bottom: 100px; 
+    box-sizing: border-box;
+}
+
+#edit-medicamento.page.active {
+    min-height: 100vh;
+    padding-bottom: 100px; 
+    box-sizing: border-box;
+}
